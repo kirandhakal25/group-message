@@ -1,0 +1,1923 @@
+Started GET "/" for ::1 at 2020-11-05 19:11:46 +0700
+  
+ActiveRecord::NoDatabaseError (FATAL:  database "group_message_development" does not exist
+):
+  
+activerecord (6.0.3.4) lib/active_record/connection_adapters/postgresql_adapter.rb:50:in `rescue in postgresql_connection'
+activerecord (6.0.3.4) lib/active_record/connection_adapters/postgresql_adapter.rb:33:in `postgresql_connection'
+activerecord (6.0.3.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:887:in `new_connection'
+activerecord (6.0.3.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `checkout_new_connection'
+activerecord (6.0.3.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:910:in `try_to_checkout_new_connection'
+activerecord (6.0.3.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:871:in `acquire_connection'
+activerecord (6.0.3.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:593:in `checkout'
+activerecord (6.0.3.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:437:in `connection'
+activerecord (6.0.3.4) lib/active_record/connection_adapters/abstract/connection_pool.rb:1119:in `retrieve_connection'
+activerecord (6.0.3.4) lib/active_record/connection_handling.rb:221:in `retrieve_connection'
+activerecord (6.0.3.4) lib/active_record/connection_handling.rb:189:in `connection'
+activerecord (6.0.3.4) lib/active_record/migration.rb:562:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (257.8ms)[0m  [1m[35mCREATE DATABASE "group_message_development" ENCODING = 'unicode'[0m
+  [1m[35m (257.9ms)[0m  [1m[35mCREATE DATABASE "group_message_test" ENCODING = 'unicode'[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4152993274650625965)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20201105120028)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "content" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4152993274650625965)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4152993274650625965)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20201105120028)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "content" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4152993274650625965)[0m
+Started GET "/" for ::1 at 2020-11-05 19:21:44 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.4) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.4) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4152993274650625965)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20201105120028)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "content" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4152993274650625965)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (114.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "group_message_development"[0m
+  [1m[35m (113.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "group_message_test"[0m
+  [1m[35m (247.0ms)[0m  [1m[35mCREATE DATABASE "group_message_development" ENCODING = 'unicode'[0m
+  [1m[35m (266.0ms)[0m  [1m[35mCREATE DATABASE "group_message_test" ENCODING = 'unicode'[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4152993274650625965)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20201105120028)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "content" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(4152993274650625965)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (113.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "group_message_development"[0m
+  [1m[35m (114.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "group_message_test"[0m
+  [1m[35m (252.6ms)[0m  [1m[35mCREATE DATABASE "group_message_development" ENCODING = 'unicode'[0m
+  [1m[35m (259.6ms)[0m  [1m[35mCREATE DATABASE "group_message_test" ENCODING = 'unicode'[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4152993274650625965)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMessages (20201105120028)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "content" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4152993274650625965)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4152993274650625965)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20201105121845)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201105121845"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateMessages (20201105123055)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "messages" ("id" bigserial primary key, "content" text, "user_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_273a25a7a6"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE  INDEX  "index_messages_on_user_id" ON "messages"  ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201105123055"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-11-05 12:31:05.409257"], ["updated_at", "2020-11-05 12:31:05.409257"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4152993274650625965)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-11-05 19:31:48 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant MessagesController
+Did you mean?  DeviseController):
+  
+actionpack (6.0.3.4) lib/action_dispatch/http/request.rb:92:in `rescue in controller_class_for'
+actionpack (6.0.3.4) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (6.0.3.4) lib/action_dispatch/http/request.rb:81:in `controller_class'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:44:in `controller'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
+ (called from load at /home/kirandhakal25/.rbenv/versions/2.7.1/bin/rake:23)
+Started GET "/" for ::1 at 2020-11-05 19:35:21 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 187)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /media/kirandhakal25/Windows-SSD/AIT/Web_TA/mylabs/group-message/public/packs
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.44.2
+Time: 2169ms
+Built at: 11/05/2020 7:35:25 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 4111ms (Views: 4105.1ms | ActiveRecord: 0.0ms | Allocations: 19873)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:35:29 +0700
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 24.1ms | ActiveRecord: 0.0ms | Allocations: 3390)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:42:15 +0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.4) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.4) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4152993274650625965)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddUsernameToUsers (20201105123612)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "username" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201105123612"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4152993274650625965)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2020-11-05 19:42:40 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 187)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 24.6ms | ActiveRecord: 0.0ms | Allocations: 8674)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-11-05 19:42:43 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 200)
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 513)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 38.1ms | Allocations: 7633)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 48.5ms | ActiveRecord: 4.3ms | Allocations: 18001)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 19:42:44 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 200)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 15.3ms | Allocations: 1844)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 33.7ms | ActiveRecord: 0.0ms | Allocations: 6312)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-11-05 19:42:45 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 80)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1232)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 4915)
+
+
+Started POST "/users" for ::1 at 2020-11-05 19:42:57 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"aVmHZ3hK2ZYBbXx+a7uCdijobGoa69cpbGVtAnH0uB8WYwYeARtElAIl5xMAADPKXFEm9r44AWnRukhGUDeKJQ==", "user"=>{"email"=>"kirandhakal25@gmail.com", "username"=>"kirandhakal25", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kirandhakal25@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "kirandhakal25@gmail.com"], ["encrypted_password", "$2a$12$G02Znqupu8f.8ymKHSw8vOZAvYayuoZ89SMkRfYMV0CsyrnlhOQRW"], ["created_at", "2020-11-05 12:42:57.625255"], ["updated_at", "2020-11-05 12:42:57.625255"], ["username", "kirandhakal25"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 224ms (ActiveRecord: 3.7ms | Allocations: 10439)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:42:57 +0700
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.3ms | Allocations: 4518)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-11-05 19:43:00 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mUMrl8CwKVJ7FnhL90G1vNwWo4ls0CBJ1Q6Uc1GLXyZyhcCEwnHle/Kzi4LAasTWmn+L5Fnm5Um+nfIxsx4F7w=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 0.5ms | Allocations: 2735)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:43:00 +0700
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3516)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 19:43:01 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1032)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 0.0ms | Allocations: 4758)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 19:49:39 +0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 602)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 8.5ms | Allocations: 4677)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 32.4ms | ActiveRecord: 3.2ms | Allocations: 17966)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-11-05 19:49:46 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"/B8ntX20diJnTrIyEKbXayq5V2CmWukobZbrPY8ks9THornNDqrks0qyjtom0c2/H+GBjEyzGidhfpcS4COzPQ==", "user"=>{"username"=>"kirandhakal25", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "kirandhakal25"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 207ms (ActiveRecord: 0.6ms | Allocations: 5353)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:49:46 +0700
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 80)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.2ms | Allocations: 5186)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-11-05 19:49:51 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xQHAdR+4E51EZygYGupi4679jCNywy54O1QBu7EIvT0wDjrQEGaqBAt7QG7hXDNkHymWzQ5qtNVmlbFXhusREg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms | Allocations: 2712)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:49:51 +0700
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 3521)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 19:49:52 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1027)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.0ms | Allocations: 4767)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-11-05 19:49:58 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"h5yi8Y8o1gOXiTvg6NkRwJKlhvRv8hr+VpCvpOy4zQad0hO5fJ3O+M7h9ZbtFejqg46rFsZPmPj9OuF2WS/52Q==", "user"=>{"username"=>"kirandhakal25", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "kirandhakal25"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 200ms (ActiveRecord: 0.3ms | Allocations: 2746)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:49:58 +0700
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.3ms | Allocations: 4365)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-11-05 19:50:00 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZHJsj8hveBeNzdLGwA2IiqKGWA2ZJU7Al8WsXM2YIx2HsbvmDgmM92gCAc9todRCpEcHuNKHOe6SyMOCbdwT2w=="}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms (ActiveRecord: 1.2ms | Allocations: 2195)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:50:00 +0700
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 3511)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 19:50:02 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1017)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.0ms | Allocations: 4746)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-11-05 19:50:03 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 199)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 119)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 9.4ms | Allocations: 2098)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 24.8ms | ActiveRecord: 0.0ms | Allocations: 6481)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 19:50:04 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 33.8ms | ActiveRecord: 0.0ms | Allocations: 4749)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-11-05 19:54:41 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"col+QYDyUJACT4ofJ/HZKSQgvo8UWPpM0/VLkQ3nZSCHQ8l8VifZCUpTdstahTU/uUBvgiQmdiqP6CBwxOFBSQ==", "user"=>{"username"=>"kirandhakal25", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "kirandhakal25"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 200ms (ActiveRecord: 0.6ms | Allocations: 2726)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:54:42 +0700
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.3ms | Allocations: 4364)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:56:37 +0700
+Processing by MessagesController#index as HTML
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_messages.html.erb (Duration: 3.0ms | Allocations: 1711)
+  Rendered messages/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2049)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 3345)
+
+
+  
+ActionView::Template::Error (undefined method `any?' for nil:NilClass):
+    1: <div id="messages" class="messages">
+    2:   <div id="messages-table" class="messages-table">
+    3:     <% if @messages.any? %>
+    4:         <% @messages.each do |message| %>
+    5:             <div class="message">
+    6:               <div class="message-user">
+  
+app/views/messages/_messages.html.erb:3
+app/views/messages/index.html.erb:4
+Started GET "/" for ::1 at 2020-11-05 19:59:02 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_messages.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered messages/_message_form.html.erb (Duration: 2.1ms | Allocations: 615)
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 892)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 73ms (Views: 13.4ms | ActiveRecord: 6.6ms | Allocations: 21354)
+
+
+Started GET "/" for ::1 at 2020-11-05 19:59:59 +0700
+Processing by MessagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 188)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 19:59:59 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 526)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.7ms | Allocations: 1851)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 6679)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-11-05 20:00:02 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 191)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 90)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1907)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.9ms | ActiveRecord: 0.0ms | Allocations: 6280)
+
+
+Started POST "/users" for ::1 at 2020-11-05 20:00:15 +0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"7w1Mz0NAOvrcMl9oWn9VbqyIQvCqxglaaxQJiFb6Up23/a01Y2LUxnA+l/lVyteb1sxJ5NIk9dJ3iVHMiG+rMQ==", "user"=>{"email"=>"st121108@ait.asia", "username"=>"st121108", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "st121108@ait.asia"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "username") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "st121108@ait.asia"], ["encrypted_password", "$2a$12$0TpvmIlBeKWadahYycwPOubMLB6SRz8JI/z51sodUPUl54ylKJYAe"], ["created_at", "2020-11-05 13:00:15.876078"], ["updated_at", "2020-11-05 13:00:15.876078"], ["username", "st121108"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 203ms (ActiveRecord: 3.3ms | Allocations: 8628)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:00:15 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  Rendered messages/_messages.html.erb (Duration: 0.0ms | Allocations: 6)
+  Rendered messages/_message_form.html.erb (Duration: 0.3ms | Allocations: 196)
+  Rendered messages/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 335)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.3ms | ActiveRecord: 0.5ms | Allocations: 6075)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 20:00:20 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Hi"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (1.6ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Hi"], ["user_id", 2], ["created_at", "2020-11-05 13:00:20.989181"], ["updated_at", "2020-11-05 13:00:20.989181"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+Redirected to http://localhost:3000/messages
+Completed 200 OK in 34ms (ActiveRecord: 6.0ms | Allocations: 5201)
+
+
+Started GET "/messages" for ::1 at 2020-11-05 20:00:21 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 2.3ms | Allocations: 971)
+  Rendered messages/_message_form.html.erb (Duration: 0.4ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1290)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 0.7ms | Allocations: 7022)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:00:24 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 3.2ms | Allocations: 794)
+  Rendered messages/_message_form.html.erb (Duration: 0.6ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1113)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 21.3ms | ActiveRecord: 1.0ms | Allocations: 6849)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 20:00:28 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Hello"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Hello"], ["user_id", 1], ["created_at", "2020-11-05 13:00:28.011329"], ["updated_at", "2020-11-05 13:00:28.011329"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+Redirected to http://localhost:3000/messages
+Completed 200 OK in 12ms (ActiveRecord: 3.3ms | Allocations: 5177)
+
+
+Started GET "/messages" for ::1 at 2020-11-05 20:00:28 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 4.0ms | Allocations: 1585)
+  Rendered messages/_message_form.html.erb (Duration: 0.6ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1904)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 1.0ms | Allocations: 7661)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 20:00:34 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"How are you?"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (1.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "How are you?"], ["user_id", 2], ["created_at", "2020-11-05 13:00:34.469314"], ["updated_at", "2020-11-05 13:00:34.469314"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+Redirected to http://localhost:3000/messages
+Completed 200 OK in 30ms (ActiveRecord: 5.6ms | Allocations: 5179)
+
+
+Started GET "/messages" for ::1 at 2020-11-05 20:00:34 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 4.9ms | Allocations: 2282)
+  Rendered messages/_message_form.html.erb (Duration: 0.5ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 2601)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 14.3ms | ActiveRecord: 1.3ms | Allocations: 8335)
+
+
+Started GET "/messages" for ::1 at 2020-11-05 20:00:38 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 15.2ms | Allocations: 2281)
+  Rendered messages/_message_form.html.erb (Duration: 1.6ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 18.8ms | Allocations: 2600)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 34.4ms | ActiveRecord: 2.6ms | Allocations: 8338)
+
+
+Started GET "/messages" for ::1 at 2020-11-05 20:07:06 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 8.6ms | Allocations: 2284)
+  Rendered messages/_message_form.html.erb (Duration: 0.7ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 2603)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 62.2ms | ActiveRecord: 3.7ms | Allocations: 13101)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.3.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.3.4) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.3.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.3.4) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started DELETE "/users/sign_out" for ::1 at 2020-11-05 20:07:12 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zCq2LbX+1oFmncI489uvvWJatQ01F/jBvvYX7R9hqR63at4Pr9zlGoGhH18C0kevXoXQcWk2hVfMnXf0AtC/dA=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.4ms | Allocations: 2298)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:07:12 +0700
+Processing by MessagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 300)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 20:07:12 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1030)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.9ms | ActiveRecord: 0.0ms | Allocations: 4777)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.3.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.3.4) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.3.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.3.4) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/users/sign_in" for ::1 at 2020-11-05 20:07:20 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"oaXbTcx3HN0QzfIUZE22Gio6IxT521BWArF6FMNiYsDOSEYXMQMz/J9hy7fT2AVb3w8vBMqgri2iZGxAimJJlw==", "user"=>{"username"=>"kirandhakal25", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "kirandhakal25"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 208ms (ActiveRecord: 0.5ms | Allocations: 3051)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:07:20 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.1ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 2.3ms | Allocations: 2281)
+  Rendered messages/_message_form.html.erb (Duration: 0.3ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2601)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.4ms | ActiveRecord: 0.6ms | Allocations: 8374)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.3.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.3.4) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.3.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.3.4) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/messages" for ::1 at 2020-11-05 20:07:25 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 6.2ms | Allocations: 2281)
+  Rendered messages/_message_form.html.erb (Duration: 0.4ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 2600)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 17.6ms | ActiveRecord: 2.1ms | Allocations: 8366)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/bootstrap"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `block in call'
+activesupport (6.0.3.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.3.4) lib/active_support/logger.rb:64:in `block (3 levels) in broadcast'
+activesupport (6.0.3.4) lib/active_support/logger_silence.rb:36:in `silence'
+activesupport (6.0.3.4) lib/active_support/logger.rb:62:in `block (2 levels) in broadcast'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:11:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/messages" for ::1 at 2020-11-05 20:08:16 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 9.7ms | Allocations: 2281)
+  Rendered messages/_message_form.html.erb (Duration: 0.9ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 11.6ms | Allocations: 2600)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 197ms (Views: 180.3ms | ActiveRecord: 2.5ms | Allocations: 27620)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:08:21 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 9.1ms | Allocations: 2281)
+  Rendered messages/_message_form.html.erb (Duration: 1.2ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 2600)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 26.1ms | ActiveRecord: 1.9ms | Allocations: 8471)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 20:08:36 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"I am fine. How are you?"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (1.1ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "I am fine. How are you?"], ["user_id", 1], ["created_at", "2020-11-05 13:08:36.211359"], ["updated_at", "2020-11-05 13:08:36.211359"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+Redirected to http://localhost:3000/messages
+Completed 200 OK in 29ms (ActiveRecord: 4.8ms | Allocations: 5205)
+
+
+Started GET "/messages" for ::1 at 2020-11-05 20:08:36 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 6.0ms | Allocations: 2977)
+  Rendered messages/_message_form.html.erb (Duration: 0.8ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 3296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.8ms | Allocations: 9199)
+
+
+Started GET "/messages" for ::1 at 2020-11-05 20:08:38 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 8.0ms | Allocations: 2977)
+  Rendered messages/_message_form.html.erb (Duration: 0.6ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 3296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 20.5ms | ActiveRecord: 1.5ms | Allocations: 9179)
+
+
+Started GET "/messages" for ::1 at 2020-11-05 20:09:38 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 10.9ms | Allocations: 3156)
+  Rendered messages/_message_form.html.erb (Duration: 1.4ms | Allocations: 403)
+  Rendered messages/index.html.erb within layouts/application (Duration: 16.4ms | Allocations: 4083)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 32.0ms | ActiveRecord: 2.0ms | Allocations: 11122)
+
+
+Started GET "/messages" for ::1 at 2020-11-05 20:09:42 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 8.9ms | Allocations: 2977)
+  Rendered messages/_message_form.html.erb (Duration: 0.4ms | Allocations: 192)
+  Rendered messages/index.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3300)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 22.3ms | ActiveRecord: 1.5ms | Allocations: 9179)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-11-05 20:09:43 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"UQwKlcxe2KLc3xsCUps50y9wYxpwKrPTrd8pQzZ4rnfbahHOoOXvXjLVc53whDxU/+jAQa0kZy9c+bND8kAf5w=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms | Allocations: 2199)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:09:43 +0700
+Processing by MessagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 302)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 20:09:43 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 514)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 1832)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 25.3ms | ActiveRecord: 0.0ms | Allocations: 6706)
+
+
+Started POST "/users/sign_in" for ::1 at 2020-11-05 20:09:49 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"SOiQK+V+c5BbnASk7JVPiBhdp9bvAqcBi7e3EuttrZNUuB+jRxIBM/dWvFIWOKEVNiULJWQQhwIlL/734mJ+vQ==", "user"=>{"username"=>"kirandhakal25", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "kirandhakal25"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 205ms (ActiveRecord: 0.5ms | Allocations: 3749)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:09:49 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:21:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 6.3ms | Allocations: 2977)
+  Rendered messages/_message_form.html.erb (Duration: 0.4ms | Allocations: 196)
+  Rendered messages/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 3305)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 16.6ms | ActiveRecord: 1.2ms | Allocations: 9204)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2020-11-05 20:09:52 +0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jAeFGsbnpHxlVSCiTsI+eGydKoFGCQijVigDNehIs8HDPMCCcOrLUcAHjIqyhvfluDLT1q2BvX6ibNuK0vKLRA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms | Allocations: 2182)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:09:52 +0700
+Processing by MessagesController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 20:09:52 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1025)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.8ms | ActiveRecord: 0.0ms | Allocations: 4863)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-11-05 20:09:55 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 191)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 81)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1896)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 6349)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 20:09:59 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1026)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms | Allocations: 4892)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:23:50 +0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms | Allocations: 1217)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 20:23:50 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 602)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 2801)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /media/kirandhakal25/Windows-SSD/AIT/Web_TA/mylabs/group-message/public/packs
+[Webpacker] Hash: 51694da46d91c5ac0704
+Version: webpack 4.44.2
+Time: 4602ms
+Built at: 11/05/2020 8:23:56 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-b7c8bb25384e962cf2eb.js    842 KiB  application  [emitted] [immutable]  application
+js/application-b7c8bb25384e962cf2eb.js.map    898 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-b7c8bb25384e962cf2eb.js js/application-b7c8bb25384e962cf2eb.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 846 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 111 hidden modules
+
+Completed 200 OK in 6146ms (Views: 6135.7ms | ActiveRecord: 2.8ms | Allocations: 22732)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 20:24:11 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1024)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 4887)
+
+
+Started GET "/users/sign_up" for ::1 at 2020-11-05 20:24:15 +0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 199)
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 119)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 6.4ms | Allocations: 2103)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 16.5ms | ActiveRecord: 0.0ms | Allocations: 6620)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 20:24:18 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1027)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 35.1ms | ActiveRecord: 0.0ms | Allocations: 4881)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:45:33 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MessagesController#index as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms | Allocations: 1211)
+
+
+Started GET "/users/sign_in" for ::1 at 2020-11-05 20:45:33 +0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 602)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2801)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /media/kirandhakal25/Windows-SSD/AIT/Web_TA/mylabs/group-message/public/packs
+[Webpacker] Hash: 4d2d628b62f9dfdfe1ba
+Version: webpack 4.44.2
+Time: 2153ms
+Built at: 11/05/2020 8:45:36 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-26a41033d9ec53618289.js    865 KiB  application  [emitted] [immutable]  application
+js/application-26a41033d9ec53618289.js.map    923 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-26a41033d9ec53618289.js js/application-26a41033d9ec53618289.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 182 bytes {application} [built]
+[./app/javascript/channels/consumer.js] 265 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/channels/room_channel.js] 610 bytes {application} [optional] [built]
+[./app/javascript/packs/application.js] 855 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 112 hidden modules
+
+Completed 200 OK in 3525ms (Views: 3512.9ms | ActiveRecord: 3.2ms | Allocations: 18076)
+
+
+Started GET "/cable" for ::1 at 2020-11-05 20:45:36 +0700
+Started GET "/cable/" [WebSocket] for ::1 at 2020-11-05 20:45:36 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started POST "/users/sign_in" for ::1 at 2020-11-05 20:45:44 +0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Nei8/1dAM9w7rgRNXDne6IcLz6XdG8iV7wdGlsrKT6NootgpWEjJz6mqKwdqTUD/nT6OjXlr1e4gH6t8epM5Ug==", "user"=>{"username"=>"kirandhakal25", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["username", "kirandhakal25"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 200ms (ActiveRecord: 0.8ms | Allocations: 5252)
+
+
+Started GET "/" for ::1 at 2020-11-05 20:45:45 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 5.2ms | Allocations: 3342)
+  Rendered messages/_message_form.html.erb (Duration: 1.2ms | Allocations: 535)
+  Rendered messages/index.html.erb within layouts/application (Duration: 8.1ms | Allocations: 4409)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 17.6ms | ActiveRecord: 3.3ms | Allocations: 16841)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-11-05 20:45:45 +0700
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2020-11-05 20:45:45 +0700
+Started GET "/cable/" [WebSocket] for ::1 at 2020-11-05 20:45:45 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started GET "/messages" for ::1 at 2020-11-05 20:45:51 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.6ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 6.6ms | Allocations: 2977)
+  Rendered messages/_message_form.html.erb (Duration: 0.6ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3298)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 19.4ms | ActiveRecord: 1.4ms | Allocations: 9192)
+
+
+Started GET "/cable" for ::1 at 2020-11-05 20:45:52 +0700
+Started GET "/cable/" [WebSocket] for ::1 at 2020-11-05 20:45:52 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started POST "/messages" for ::1 at 2020-11-05 20:46:09 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Okay this is new message from me, using actioncable"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Okay this is new message from me, using actioncable"], ["user_id", 1], ["created_at", "2020-11-05 13:46:09.486142"], ["updated_at", "2020-11-05 13:46:09.486142"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"Okay this is new message from me, using actioncable", :username=>"kirandhakal25"}
+RoomChannel transmitting {"content"=>"Okay this is new message from me, using actioncable", "username"=>"kirandhakal25"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"Okay this is new message from me, using actioncable", "username"=>"kirandhakal25"} (via streamed from room_channel)
+  Rendering messages/create.html.erb within layouts/application
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.6ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 12.6ms | ActiveRecord: 4.0ms | Allocations: 9507)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 20:52:27 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Okay"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Okay"], ["user_id", 2], ["created_at", "2020-11-05 13:52:28.000049"], ["updated_at", "2020-11-05 13:52:28.000049"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"Okay", :username=>"st121108"}
+  Rendering messages/create.html.erb within layouts/application
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+RoomChannel transmitting {"content"=>"Okay", "username"=>"st121108"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"Okay", "username"=>"st121108"} (via streamed from room_channel)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 17.7ms | ActiveRecord: 4.9ms | Allocations: 9193)
+
+
+Started GET "/" for ::1 at 2020-11-05 22:00:07 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 12.0ms | Allocations: 4373)
+  Rendered messages/_message_form.html.erb (Duration: 0.6ms | Allocations: 192)
+  Rendered messages/index.html.erb within layouts/application (Duration: 13.3ms | Allocations: 4696)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /media/kirandhakal25/Windows-SSD/AIT/Web_TA/mylabs/group-message/public/packs
+[Webpacker] Hash: b915248dd577ef5f4cdd
+Version: webpack 4.44.2
+Time: 2127ms
+Built at: 11/05/2020 10:00:10 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-6b0b406f9eb7094fe7b6.js    865 KiB  application  [emitted] [immutable]  application
+js/application-6b0b406f9eb7094fe7b6.js.map    923 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-6b0b406f9eb7094fe7b6.js js/application-6b0b406f9eb7094fe7b6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 182 bytes {application} [built]
+[./app/javascript/channels/consumer.js] 265 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/channels/room_channel.js] 648 bytes {application} [optional] [built]
+[./app/javascript/packs/application.js] 855 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 112 hidden modules
+
+Completed 200 OK in 3656ms (Views: 3646.2ms | ActiveRecord: 2.2ms | Allocations: 12265)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-11-05 22:00:10 +0700
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2020-11-05 22:00:10 +0700
+Started GET "/cable/" [WebSocket] for ::1 at 2020-11-05 22:00:10 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started GET "/messages" for ::1 at 2020-11-05 22:00:11 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 10.4ms | Allocations: 4370)
+  Rendered messages/_message_form.html.erb (Duration: 0.7ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 12.0ms | Allocations: 4689)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 25.4ms | ActiveRecord: 1.6ms | Allocations: 10585)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-11-05 22:00:11 +0700
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2020-11-05 22:00:11 +0700
+Started GET "/cable/" [WebSocket] for ::1 at 2020-11-05 22:00:11 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started POST "/messages" for ::1 at 2020-11-05 22:00:23 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Hi again"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.9ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Hi again"], ["user_id", 1], ["created_at", "2020-11-05 15:00:23.817711"], ["updated_at", "2020-11-05 15:00:23.817711"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"Hi again", :username=>"kirandhakal25"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"Hi again", "username"=>"kirandhakal25"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"Hi again", "username"=>"kirandhakal25"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 15.0ms | ActiveRecord: 4.5ms | Allocations: 9031)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:00:36 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>""}, "commit"=>"Send"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.4ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", ""], ["user_id", 2], ["created_at", "2020-11-05 15:00:36.483203"], ["updated_at", "2020-11-05 15:00:36.483203"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"", :username=>"st121108"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"", "username"=>"st121108"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+RoomChannel transmitting {"content"=>"", "username"=>"st121108"} (via streamed from room_channel)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 10.8ms | ActiveRecord: 3.9ms | Allocations: 8983)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:00:40 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>""}, "commit"=>"Send"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", ""], ["user_id", 1], ["created_at", "2020-11-05 15:00:40.156526"], ["updated_at", "2020-11-05 15:00:40.156526"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"", :username=>"kirandhakal25"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"", "username"=>"kirandhakal25"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"", "username"=>"kirandhakal25"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 11.9ms | ActiveRecord: 4.8ms | Allocations: 9026)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:00:46 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Hi again from me as well."}, "commit"=>"Send"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.8ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Hi again from me as well."], ["user_id", 2], ["created_at", "2020-11-05 15:00:46.927373"], ["updated_at", "2020-11-05 15:00:46.927373"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"Hi again from me as well.", :username=>"st121108"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"Hi again from me as well.", "username"=>"st121108"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"Hi again from me as well.", "username"=>"st121108"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 14.6ms | ActiveRecord: 5.5ms | Allocations: 9042)
+
+
+Started GET "/" for ::1 at 2020-11-05 22:07:34 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 14.5ms | Allocations: 7158)
+  Rendered messages/_message_form.html.erb (Duration: 0.5ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 15.4ms | Allocations: 7477)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /media/kirandhakal25/Windows-SSD/AIT/Web_TA/mylabs/group-message/public/packs
+[Webpacker] Hash: 07b7966d88ae2642964f
+Version: webpack 4.44.2
+Time: 1886ms
+Built at: 11/05/2020 10:07:37 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-89fa672476a0e896b5f1.js    865 KiB  application  [emitted] [immutable]  application
+js/application-89fa672476a0e896b5f1.js.map    923 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-89fa672476a0e896b5f1.js js/application-89fa672476a0e896b5f1.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 182 bytes {application} [built]
+[./app/javascript/channels/consumer.js] 265 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/channels/room_channel.js] 981 bytes {application} [optional] [built]
+[./app/javascript/packs/application.js] 855 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 112 hidden modules
+
+Completed 200 OK in 3317ms (Views: 3309.7ms | ActiveRecord: 1.8ms | Allocations: 15078)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-11-05 22:07:37 +0700
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2020-11-05 22:07:37 +0700
+Started GET "/cable/" [WebSocket] for ::1 at 2020-11-05 22:07:37 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started GET "/messages" for ::1 at 2020-11-05 22:07:48 +0700
+Processing by MessagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  Rendering messages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/messages/_messages.html.erb:7
+  Rendered messages/_messages.html.erb (Duration: 22.1ms | Allocations: 7155)
+  Rendered messages/_message_form.html.erb (Duration: 0.4ms | Allocations: 189)
+  Rendered messages/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 7474)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 33.7ms | ActiveRecord: 2.3ms | Allocations: 13436)
+
+
+Finished "/cable/" [WebSocket] for ::1 at 2020-11-05 22:07:48 +0700
+RoomChannel stopped streaming from room_channel
+Started GET "/cable" for ::1 at 2020-11-05 22:07:48 +0700
+Started GET "/cable/" [WebSocket] for ::1 at 2020-11-05 22:07:48 +0700
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+RoomChannel is transmitting the subscription confirmation
+RoomChannel is streaming from room_channel
+Started POST "/messages" for ::1 at 2020-11-05 22:07:51 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>""}, "commit"=>"Send"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.6ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", ""], ["user_id", 2], ["created_at", "2020-11-05 15:07:51.489268"], ["updated_at", "2020-11-05 15:07:51.489268"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"", :username=>"st121108"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"", "username"=>"st121108"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"", "username"=>"st121108"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 9.1ms | ActiveRecord: 3.8ms | Allocations: 9014)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:07:54 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Hey"}, "commit"=>"Send"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (1.1ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Hey"], ["user_id", 2], ["created_at", "2020-11-05 15:07:54.571625"], ["updated_at", "2020-11-05 15:07:54.571625"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"Hey", :username=>"st121108"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"Hey", "username"=>"st121108"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"Hey", "username"=>"st121108"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 58ms (Views: 28.4ms | ActiveRecord: 6.0ms | Allocations: 9013)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:07:58 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>""}, "commit"=>"Send"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (1.0ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", ""], ["user_id", 1], ["created_at", "2020-11-05 15:07:58.368370"], ["updated_at", "2020-11-05 15:07:58.368370"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"", :username=>"kirandhakal25"}
+  Rendering messages/create.html.erb within layouts/application
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+RoomChannel transmitting {"content"=>"", "username"=>"kirandhakal25"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"", "username"=>"kirandhakal25"} (via streamed from room_channel)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 19.4ms | ActiveRecord: 5.8ms | Allocations: 9056)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:08:00 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>""}, "commit"=>"Send"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", ""], ["user_id", 1], ["created_at", "2020-11-05 15:08:00.284908"], ["updated_at", "2020-11-05 15:08:00.284908"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"", :username=>"kirandhakal25"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"", "username"=>"kirandhakal25"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"", "username"=>"kirandhakal25"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 11.9ms | ActiveRecord: 3.5ms | Allocations: 9060)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:08:02 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Okay"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Okay"], ["user_id", 1], ["created_at", "2020-11-05 15:08:02.658913"], ["updated_at", "2020-11-05 15:08:02.658913"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"Okay", :username=>"kirandhakal25"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"Okay", "username"=>"kirandhakal25"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"Okay", "username"=>"kirandhakal25"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 15.2ms | ActiveRecord: 3.7ms | Allocations: 9064)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:08:11 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Why are there two spaces"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Why are there two spaces"], ["user_id", 2], ["created_at", "2020-11-05 15:08:11.510930"], ["updated_at", "2020-11-05 15:08:11.510930"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"Why are there two spaces", :username=>"st121108"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"Why are there two spaces", "username"=>"st121108"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"Why are there two spaces", "username"=>"st121108"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 16.7ms | ActiveRecord: 3.1ms | Allocations: 9113)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:08:13 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>""}, "commit"=>"Send"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", ""], ["user_id", 2], ["created_at", "2020-11-05 15:08:13.560580"], ["updated_at", "2020-11-05 15:08:13.560580"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"", :username=>"st121108"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"", "username"=>"st121108"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"", "username"=>"st121108"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 9.0ms | ActiveRecord: 3.3ms | Allocations: 9090)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:08:16 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>""}, "commit"=>"Send"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.8ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (2.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (1.1ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", ""], ["user_id", 2], ["created_at", "2020-11-05 15:08:16.893519"], ["updated_at", "2020-11-05 15:08:16.893519"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"", :username=>"st121108"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"", "username"=>"st121108"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"", "username"=>"st121108"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 54ms (Views: 20.5ms | ActiveRecord: 7.4ms | Allocations: 9311)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:08:24 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"I don't know why"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "I don't know why"], ["user_id", 2], ["created_at", "2020-11-05 15:08:24.783446"], ["updated_at", "2020-11-05 15:08:24.783446"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"I don't know why", :username=>"st121108"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"I don't know why", "username"=>"st121108"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"I don't know why", "username"=>"st121108"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 53ms (Views: 38.0ms | ActiveRecord: 3.5ms | Allocations: 9096)
+
+
+Started POST "/messages" for ::1 at 2020-11-05 22:08:32 +0700
+Processing by MessagesController#create as JS
+  Parameters: {"message"=>{"content"=>"Okay that's find i guess"}, "commit"=>"Send"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" ORDER BY "messages"."created_at" DESC LIMIT $1[0m  [["LIMIT", 50]]
+  ↳ app/controllers/messages_controller.rb:27:in `get_messages'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("content", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Okay that's find i guess"], ["user_id", 1], ["created_at", "2020-11-05 15:08:32.609179"], ["updated_at", "2020-11-05 15:08:32.609179"]]
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/messages_controller.rb:10:in `create'
+[ActionCable] Broadcasting to room_channel: {:content=>"Okay that's find i guess", :username=>"kirandhakal25"}
+  Rendering messages/create.html.erb within layouts/application
+RoomChannel transmitting {"content"=>"Okay that's find i guess", "username"=>"kirandhakal25"} (via streamed from room_channel)
+RoomChannel transmitting {"content"=>"Okay that's find i guess", "username"=>"kirandhakal25"} (via streamed from room_channel)
+  Rendered messages/create.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 14.8ms | ActiveRecord: 3.2ms | Allocations: 9115)
+
+
